@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>GITR image</title>
+<style type="text/css">
+a { text-decoration:none }
+</style>
+<script type='text/javascript' src='zoompan.js'></script>
+<body>
+
+<?php
+  $server_name="www.gpecdata.med.ubc.ca";
+  $title=Strip_tags($_GET['title']);
+  $dx=Strip_tags($_GET['dx']);
+  $foxl2_status=Strip_tags($_GET['foxl2_status']);
+  $foxl2_c1=Strip_tags($_GET['foxl2_c1']);
+  $foxl2_c2=Strip_tags($_GET['foxl2_c2']);
+?>
+
+<i>Primary images for Pilsworth <i>et al.</i> [PAPER TITLE]</i>
+<h1><?php print($title);?> - <?php print($dx);?>; FOXL2: <?php print($foxl2_status);?></h1>
+<table border=1>
+<tr>
+<th>Core #1</th>
+<th>Core #2</th>
+</tr>
+<tr>
+  <td><canvas id=c1 width=600 height=500></canvas></td>
+  <td><canvas id=c2 width=600 height=500></canvas></td>
+</tr>
+</table>
+<br>
+<i>please note: images zoomable and pannable; mouse scoll up to zoom in; mouse scroll down to zoom out</i>
+<script type='text/javascript'>
+var zp1;
+var zp2;
+var zp3;
+var zp4;
+zp1 = new Zoompan('http://<?php print($server_name);?>/images/bliss/19-011/19-011_FOXL2-NovusBiologicals_v1_b1.qptma.data/<?php print($foxl2_c1);?>','c1',false);
+zp2 = new Zoompan('http://<?php print($server_name);?>/images/bliss/19-011/19-011_FOXL2-NovusBiologicals_v1_b1.qptma.data/<?php print($foxl2_c2);?>','c2',false);
+</script>
+
+</body>
+</html>
