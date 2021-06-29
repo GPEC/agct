@@ -1,8 +1,12 @@
 <head>
-<style type="text/css">
-a { text-decoration:none }
-</style>
+<?php include "../constants.php"; ?>
+<link rel="stylesheet" href="../agct.css">
 </head>
-<H1>Primary images for Pilsworth <i>et al.</i> [PAPER TITLE]</H1>
+<body>
+<H1>Primary images for Pilsworth <i>et al.</i> [<?php print($paper_title);?>]</H1>
 
 Please click on the 'Core ID' on the left to view tissue microarray images.
+</body>
+<div class="footer">
+  <p>Copyright © <?php echo date("Y"); ?>. <a href="http://www.gpec.ubc.ca">Genetic Pathology Evaluation Centre</a>. All Rights Reserved.</p>
+</div>

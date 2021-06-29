@@ -1,14 +1,12 @@
 <html>
 <head>
 <title>GITR image</title>
-<style type="text/css">
-a { text-decoration:none }
-</style>
+<link rel="stylesheet" href="agct.css">
 <script type='text/javascript' src='zoompan.js'></script>
+<?php include "constants.php"; ?>
 <body>
 
 <?php
-  $server_name="www.gpecdata.med.ubc.ca";
   $title=Strip_tags($_GET['title']);
   $dx=Strip_tags($_GET['dx']);
   $foxl2_status=Strip_tags($_GET['foxl2_status']);
@@ -16,7 +14,7 @@ a { text-decoration:none }
   $foxl2_c2=Strip_tags($_GET['foxl2_c2']);
 ?>
 
-<i>Primary images for Pilsworth <i>et al.</i> [PAPER TITLE]</i>
+<i>Primary images for Pilsworth <i>et al.</i> [<?php print($paper_title);?>]</i>
 <h1><?php print($title);?> - <?php print($dx);?>; FOXL2: <?php print($foxl2_status);?></h1>
 <table border=1>
 <tr>
@@ -38,6 +36,10 @@ var zp4;
 zp1 = new Zoompan('http://<?php print($server_name);?>/images/bliss/19-011/19-011_FOXL2-NovusBiologicals_v1_b1.qptma.data/<?php print($foxl2_c1);?>','c1',false);
 zp2 = new Zoompan('http://<?php print($server_name);?>/images/bliss/19-011/19-011_FOXL2-NovusBiologicals_v1_b1.qptma.data/<?php print($foxl2_c2);?>','c2',false);
 </script>
+
+<div class="footer">
+  <p>Copyright © <?php echo date("Y"); ?>. <a href="http://www.gpec.ubc.ca">Genetic Pathology Evaluation Centre</a>. All Rights Reserved.</p>
+</div>
 
 </body>
 </html>
